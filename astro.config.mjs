@@ -8,9 +8,50 @@ import { SITE } from "./src/config";
 
 import mdx from "@astrojs/mdx";
 
+import rehypePrettyCode from "rehype-pretty-code";
+
+// Documentation: https://rehype-pretty-code.netlify.app/
+const prettyCodeOptions = {
+  wrap: true,
+  keepBackground: true,
+  // theme: JSON.parse(codeTheme),
+  filterMetaString: string => string.replace(/filename="[^"]*"/, ""),
+  onVisitLine(node) {
+    if (node.children.length === 0) {
+      node.children = [
+        {
+          type: "text",
+          value: " ",
+        },
+      ];
+    }
+  },
+  onVisitHighlightedLine(node) {
+    node.properties.className.push("highlighted");
+  },
+  onVisitHighlightedWord(node) {
+    node.properties.className = ["word"];
+  },
+  tokensMap: {},
+};
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+  markdown: {
+    extendDefaultPlugins: true,
+    syntaxHighlight: false,
+    rehypePlugins: [[rehypePrettyCode, prettyCodeOptions]],
+    remarkPlugins: [
+      remarkToc,
+      [
+        remarkCollapse,
+        {
+          test: "Table of contents",
+        },
+      ],
+    ],
+  },
   integrations: [
     tailwind({
       config: {
@@ -20,19 +61,7 @@ export default defineConfig({
     react(),
     sitemap(),
     mdx({
-      remarkPlugins: [
-        remarkToc,
-        [
-          remarkCollapse,
-          {
-            test: "Table of contents",
-          },
-        ],
-      ],
-      shikiConfig: {
-        theme: "one-dark-pro",
-        wrap: true,
-      },
+      // remarkPlugins: [remarkPlugin2],
       extendDefaultPlugins: true,
     }),
   ],

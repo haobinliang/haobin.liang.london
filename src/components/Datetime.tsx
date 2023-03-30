@@ -17,7 +17,7 @@ const FormattedDatetime = ({ datetime }: { datetime: string | Date }) => {
   const time = myDatetime.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
-    timeZoneName: "longGeneric",
+    // timeZoneName: "longGeneric",
   });
 
   // const deltaSeconds = Math.round((myDatetime.getTime() - Date.now()) / 1000);

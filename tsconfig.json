@@ -2,7 +2,6 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "baseUrl": "src",
-    "lib": ["ES5"],
     "paths": {
       "@assets/*": ["assets/*"],
       "@config": ["config.ts"],
