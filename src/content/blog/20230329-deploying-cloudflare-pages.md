@@ -39,7 +39,7 @@ Once I deployed it Cloudflare Pages, the background flashed when navigating betw
 
 <div style="position: relative; padding-bottom: 86.53846153846155%; height: 0;"><iframe src="https://www.loom.com/embed/7de818d8091c4ff48a18d563dc89ff0b" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
-I tried so many fixes. But long story short, it's the infamous [Rocket Loader](https://developers.cloudflare.com/fundamentals/speed/rocket-loader/), which 'by deferring the loading of all of your JavaScript until after rendering' to achieve 'much faster loading experience'.
+I tried so many fixes. But long story short, it's because of the infamous [Rocket Loader](https://developers.cloudflare.com/fundamentals/speed/rocket-loader/), which defers 'the loading of all of your JavaScript until after rendering' to achieve 'much faster loading experience'.
 
 Better for the speed (?); worse for the my eyes 😎.
 
