@@ -5,7 +5,6 @@ import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
-
 export interface Props {
   post: CollectionEntry<"blog">;
 }
@@ -24,7 +23,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
   <Header />
   <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
     <button
-      class="focus-outline mt-8 mb-2 flex hover:opacity-75"
+      class="focus-outline mb-2 mt-8 flex hover:opacity-75"
       onclick="history.back()"
     >
       <svg xmlns="http://www.w3.org/2000/svg"
@@ -45,8 +44,23 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
       {tags.map(tag => <Tag name={tag} />)}
     </ul>
   </main>
+  <div id="tcomment"></div>
   <Footer />
 </Layout>
+
+<!-- <script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/twikoo@1.6.11/dist/twikoo.all.min.js"
+></script> -->
+<script>
+  import twikoo from "twikoo";
+  twikoo({
+    envId: "https://hll-twikoo.up.railway.app",
+    el: "#tcomment", // 容器元素
+  }).then(() => {
+    console.log("comment loading success");
+  });
+</script>
 
 <style>
   main {

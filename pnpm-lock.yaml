@@ -31,6 +31,9 @@ dependencies:
   tailwindcss:
     specifier: ^3.3.0
     version: 3.3.0(postcss@8.4.21)(ts-node@10.9.1)
+  twikoo:
+    specifier: ^1.6.11
+    version: 1.6.11
 
 devDependencies:
   '@astrojs/react':
@@ -5797,6 +5800,10 @@ packages:
     dependencies:
       safe-buffer: 5.2.1
     dev: true
+
+  /twikoo@1.6.11:
+    resolution: {integrity: sha512-/d0MJFDrtgOHtKh9QN8KDT58h2odtZOFli7CLK83hu1BB9VqIi5jE9PqU9UggZD89vhXrYRXMkEFATMoMSbBSw==}
+    dev: false
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
