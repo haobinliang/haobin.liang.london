@@ -45,7 +45,7 @@ Better for the speed (?); worse for the my eyes 😎.
 
 The fix is to set an attribute `data-cfasync="false"` for `/public/toggle-theme.js` so [Rocket Loader will not defer ](https://developers.cloudflare.com/fundamentals/speed/rocket-loader/ignore-javascripts/) loading the switch. `data-cfasync` attribute must be put before `src`.
 
-```js title="/src/layouts/Layout.astro"
+```js
 <script data-cfasync="false" is:inline src="/toggle-theme.js"></script>
 ```
 
