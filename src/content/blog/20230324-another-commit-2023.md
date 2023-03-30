@@ -3,7 +3,7 @@ title: Another commit - 2023
 pubDatetime: 2023-03-24T21:22:05
 tags: ["astro"]
 draft: false
-# postSlug: another-commit-2023
+postSlug: another-commit-2023
 description: Rebooting my blog in 2023
 ---
 

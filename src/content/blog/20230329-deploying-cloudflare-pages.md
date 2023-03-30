@@ -3,6 +3,7 @@ title: Deploying Astro & AstroPaper to Cloudflare Pages using PNPM
 pubDatetime: 2023-03-29T23:22:05
 tags: ["astro", "cloudflare", "cloudfare-pages"]
 description: Notes about deploying Astro to Cloudflare Pages using PNPM and fixing AstroPaper background flashing when loading pages due to Rocket Loader
+postSlug: deploying-astro-astro-paper-cloudflare-pages-pnpm
 ---
 
 ## Deploying to Cloudflare Pages using PNPM
@@ -41,7 +42,7 @@ Once I deployed it Cloudflare Pages, the background flashed when navigating betw
 
 I tried so many fixes. But long story short, it's because of the infamous [Rocket Loader](https://developers.cloudflare.com/fundamentals/speed/rocket-loader/), which defers 'the loading of all of your JavaScript until after rendering' to achieve 'much faster loading experience'.
 
-Better for the speed (?); worse for the my eyes 😎.
+Better for the speed(?); worse for the my eyes 😎.
 
 The fix is to set an attribute `data-cfasync="false"` for `/public/toggle-theme.js` so [Rocket Loader will not defer ](https://developers.cloudflare.com/fundamentals/speed/rocket-loader/ignore-javascripts/) loading the switch. `data-cfasync` attribute must be put before `src`.
 
