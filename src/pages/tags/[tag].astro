@@ -11,12 +11,14 @@ import slugify from "@utils/slugify";
 import { SITE } from "@config";
 
 export interface Props {
-  post: CollectionEntry<"blog">;
+  post: CollectionEntry<"blog" | "snippet">;
   tag: string;
 }
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts_blog = await getCollection("blog");
+  const posts_snippets = await getCollection("snippet");
+  const posts = [...posts_blog, ...posts_snippets];
 
   const tags = getUniqueTags(posts);
 
@@ -30,7 +32,14 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.props;
 
-const posts = await getCollection("blog", ({ data }) => !data.draft);
+const posts_blog = await getCollection("blog", ({ data }) => !data.draft);
+const posts_snippets = await getCollection(
+  "snippet",
+  ({ data }) => !data.draft
+);
+const posts = [...posts_blog, ...posts_snippets];
+
+// const posts = await getCollection("blog", ({ data }) => !data.draft);
 
 const tagPosts = getPostsByTag(posts, tag);
 ---
@@ -38,13 +47,17 @@ const tagPosts = getPostsByTag(posts, tag);
 <Layout title={`Tag:${tag} | ${SITE.title}`}>
   <Header activeNav="tags" />
   <Main
-    pageTitle={`Tag:${tag}`}
+    pageTitle={`#${tag}`}
     pageDesc={`All the articles with the tag "${tag}".`}
   >
     <ul>
       {
-        tagPosts.map(({ data }) => (
-          <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
+        tagPosts.map(({ data, collection }) => (
+          <Card
+            href={`/${collection}/${slugify(data)}`}
+            frontmatter={data}
+            post_type={collection}
+          />
         ))
       }
     </ul>

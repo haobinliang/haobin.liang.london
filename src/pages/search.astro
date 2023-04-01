@@ -8,8 +8,12 @@ import Footer from "@components/Footer.astro";
 import Search from "@components/Search";
 
 // Retrieve all articles
-const posts = await getCollection("blog", ({ data }) => !data.draft);
-
+const posts_blog = await getCollection("blog", ({ data }) => !data.draft);
+const posts_snippets = await getCollection(
+  "snippet",
+  ({ data }) => !data.draft
+);
+const posts = [...posts_blog, ...posts_snippets];
 // List of items to search in
 const searchList = posts.map(({ data }) => ({
   title: data.title,

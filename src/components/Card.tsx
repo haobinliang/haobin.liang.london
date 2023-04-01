@@ -5,9 +5,15 @@ export interface Props {
   href?: string;
   frontmatter: BlogFrontmatter;
   secHeading?: boolean;
+  post_type?: "blog" | "snippet";
 }
 
-export default function Card({ href, frontmatter, secHeading = true }: Props) {
+export default function Card({
+  href,
+  frontmatter,
+  secHeading = true,
+  post_type,
+}: Props) {
   const { title, pubDatetime, description } = frontmatter;
   return (
     <li className="my-6">
