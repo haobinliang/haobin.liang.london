@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 function withOpacity(variableName) {
   return ({ opacityValue }) => {
@@ -58,7 +59,7 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
-      mono: ["IBM Plex Mono", "monospace"],
+      mono: ["'IBM Plex Mono'", "'Noto Serif SC'", ...defaultTheme.fontFamily.mono],
     },
     // },
   },

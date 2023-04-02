@@ -6,3 +6,5 @@ const blog = defineCollection({
 });
 
 export const collections = { blog };
+
+declare module "twikoo";
