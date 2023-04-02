@@ -65,7 +65,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
             <ul>
               {featuredPosts.map(({ data }) => (
                 <Card
-                  href={`/blog/${slugify(data)}`}
+                  href={`/posts/${slugify(data)}`}
                   frontmatter={data}
                   secHeading={false}
                 />
@@ -85,7 +85,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
             ({ data }, index) =>
               index < 4 && (
                 <Card
-                  href={`/blog/${slugify(data)}`}
+                  href={`/posts/${slugify(data)}`}
                   frontmatter={data}
                   secHeading={false}
                 />
@@ -96,7 +96,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       {
         sortedPosts.length > SITE.postPerPage && (
           <div class="all-posts-btn-wrapper">
-            <LinkButton href="/blog/2">
+            <LinkButton href="/posts/2">
               All Posts
               <svg xmlns="http://www.w3.org/2000/svg">
                 <path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z" />
