@@ -7,7 +7,7 @@ description: 折腾了大半天，终于折衷了做出了个中文的 workaroun
 locale: "zh-CN"
 ---
 
-折腾了一整天，先又回去试了 Nextjs + Tailwind 的 starter，以为 i8n 可以 out of the box 地用，谁知道还是天真了。我的脑子的确不大适合整那么复杂的东西。
+折腾了一整天，先又回去试了 Nextjs + Tailwind 的 starter，以为 i18n 可以 out of the box 地用，谁知道还是天真了。我的脑子的确不大适合整那么复杂的东西。
 
 整个过程中一直不停地重复问自己这几个问题：
 
