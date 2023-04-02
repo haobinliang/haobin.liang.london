@@ -45,7 +45,7 @@ const tagPosts = getPostsByTag(posts, tag);
       {
         tagPosts.map(({ data, collection }) => (
           <Card
-            href={`/${collection}/${slugify(data)}`}
+            href={`/posts/${slugify(data)}`}
             frontmatter={data}
             post_type={collection}
           />
