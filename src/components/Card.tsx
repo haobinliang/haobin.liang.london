@@ -5,12 +5,11 @@ export interface Props {
   href?: string;
   frontmatter: BlogFrontmatter;
   secHeading?: boolean;
-  post_type?: "blog" | "snippet";
+  post_type?: "blog";
 }
 
 export default function Card({ href, frontmatter, secHeading = true }: Props) {
-  const { title, pubDatetime, isSnippet, locale, isTranslated, tags } =
-    frontmatter;
+  const { title, pubDatetime, locale, isTranslated, tags } = frontmatter;
   return (
     <li className="my-6">
       <div className="inline-flex gap-2">

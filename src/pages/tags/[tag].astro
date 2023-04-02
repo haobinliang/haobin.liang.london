@@ -11,14 +11,12 @@ import slugify from "@utils/slugify";
 import { SITE } from "@config";
 
 export interface Props {
-  post: CollectionEntry<"blog" | "snippet">;
+  post: CollectionEntry<"blog">;
   tag: string;
 }
 
 export async function getStaticPaths() {
-  const posts_blog = await getCollection("blog");
-  const posts_snippets = await getCollection("snippet");
-  const posts = [...posts_blog, ...posts_snippets];
+  const posts = await getCollection("blog");
 
   const tags = getUniqueTags(posts);
 
@@ -32,14 +30,7 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.props;
 
-const posts_blog = await getCollection("blog", ({ data }) => !data.draft);
-const posts_snippets = await getCollection(
-  "snippet",
-  ({ data }) => !data.draft
-);
-const posts = [...posts_blog, ...posts_snippets];
-
-// const posts = await getCollection("blog", ({ data }) => !data.draft);
+const posts = await getCollection("blog", ({ data }) => !data.draft);
 
 const tagPosts = getPostsByTag(posts, tag);
 ---

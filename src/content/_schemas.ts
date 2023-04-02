@@ -11,26 +11,10 @@ export const blogSchema = z
     tags: z.array(z.string()).default(["others"]),
     ogImage: z.string().optional(),
     description: z.string(),
-    isSnippet: z.boolean().optional(),
     updatedDatetime: z.date().optional(),
     locale: z.string().optional().default("en-GB"),
     isTranslated: z.boolean().optional(),
   })
   .strict();
 
-export const snippetSchema = z
-  .object({
-    author: z.string().optional(),
-    pubDatetime: z.date(),
-    title: z.string(),
-    postSlug: z.string().optional(),
-    featured: z.boolean().optional(),
-    draft: z.boolean().optional(),
-    tags: z.array(z.string()).default(["others"]),
-    ogImage: z.string().optional(),
-    description: z.string(),
-  })
-  .strict();
-
 export type BlogFrontmatter = z.infer<typeof blogSchema>;
-export type SnippetFrontmatter = z.infer<typeof snippetSchema>;
