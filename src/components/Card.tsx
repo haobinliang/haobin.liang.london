@@ -5,6 +5,7 @@ export interface Props {
   href?: string;
   frontmatter: BlogFrontmatter;
   secHeading?: boolean;
+  post_type?: "blog" | "snippet";
 }
 
 export default function Card({ href, frontmatter, secHeading = true }: Props) {
