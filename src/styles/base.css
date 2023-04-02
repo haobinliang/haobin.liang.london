@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply font-mono;
+  }
   :root,
   html[data-theme="light"] {
     --color-fill: 251, 254, 251;
@@ -45,7 +48,7 @@
     color: rgb(100 116 139 / var(--tw-text-opacity));
   }
   body {
-    @apply flex min-h-screen flex-col bg-skin-fill font-mono text-skin-base
+    @apply flex min-h-screen flex-col bg-skin-fill text-skin-base
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
   }
   section,
