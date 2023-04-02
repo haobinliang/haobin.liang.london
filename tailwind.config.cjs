@@ -59,7 +59,7 @@ module.exports = {
       transparent: "transparent",
     },
     fontFamily: {
-      mono: ["'IBM Plex Mono'", "'Noto Serif SC'", ...defaultTheme.fontFamily.mono],
+      mono: ['"IBM Plex Mono"', '"Noto Serif SC"', ...defaultTheme.fontFamily.mono],
     },
     // },
   },
