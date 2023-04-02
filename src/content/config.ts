@@ -5,8 +5,6 @@ const blog = defineCollection({
   schema: blogSchema,
 });
 
-const snippet = defineCollection({
-  schema: snippetSchema,
-});
+export const collections = { blog };
 
-export const collections = { blog, snippet };
+declare module "twikoo";

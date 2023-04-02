@@ -11,6 +11,10 @@ export const blogSchema = z
     tags: z.array(z.string()).default(["others"]),
     ogImage: z.string().optional(),
     description: z.string(),
+    isSnippet: z.boolean().optional(),
+    updatedDatetime: z.date().optional(),
+    locale: z.string().optional().default("en-GB"),
+    isTranslated: z.boolean().optional(),
   })
   .strict();
 
