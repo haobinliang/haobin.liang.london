@@ -48,6 +48,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
       className="my-2"
       leadingText="Published:"
     />
+    <span id="twikoo_visitors" class="hidden">0</span>
     {
       updatedDatetime && (
         <Datetime datetime={pubDatetime} leadingText="Updated:" />
