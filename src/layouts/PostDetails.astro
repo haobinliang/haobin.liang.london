@@ -101,6 +101,7 @@ const ogUrl = new URL(ogImageUrl ?? `/posts/${postSlug}.png`, Astro.url.origin)
 <script
   crossorigin="anonymous"
   async
+  is:inline
   src="https://cdn.staticfile.org/twikoo/1.6.27/twikoo.all.min.js"></script>
 <script>
   document.addEventListener("astro:page-load", () => {
