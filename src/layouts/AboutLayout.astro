@@ -48,21 +48,20 @@ const { frontmatter } = Astro.props;
   }
 </style>
 
-<script
+<!-- <script
   crossorigin="anonymous"
   async
   is:inline
-  src="https://cdn.staticfile.org/twikoo/1.6.27/twikoo.all.min.js"></script>
+  src="https://cdn.staticfile.org/twikoo/1.6.27/twikoo.all.min.js"></script> -->
 <script>
+  import twikoo from "twikoo";
   document.addEventListener("astro:page-load", () => {
-    twikoo
-      .init({
-        envId: "https://comments.haobin.liang.london",
-        el: "#tcomment",
-        lang: "en-GB",
-      })
-      .then(() => {
-        console.log("comment loading success");
-      });
+    twikoo({
+      envId: "https://comments.haobin.liang.london",
+      el: "#tcomment",
+      lang: "en-GB",
+    }).then(() => {
+      console.log("comment loading success");
+    });
   });
 </script>
