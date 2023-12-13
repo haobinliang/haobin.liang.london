@@ -10,7 +10,7 @@ export interface Props {
   frontmatter: {
     title: string;
     description?: string;
-    updatedDatetime?: Date;
+    updatedDatetime?: string | Date;
   };
 }
 
@@ -20,44 +20,41 @@ const { frontmatter } = Astro.props;
 <Layout title={`${frontmatter.title} | ${SITE.title}`}>
   <Header activeNav="about" />
   <Breadcrumbs />
-  <main id="main-content p-0">
-    <section id="about" class="prose mb-28 max-w-3xl px-0 prose-img:border-0">
+  <main id="main-content">
+    <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">
       <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
       {
         frontmatter.updatedDatetime && (
           <Datetime
             datetime={frontmatter.updatedDatetime}
             leadingText="Updated:"
-            className="m-0"
+            className="text-skin-base"
           />
         )
       }
-      <span id="twikoo_visitors" class="hidden">0</span>
       <slot />
     </section>
-    <hr class="border-skin-line" aria-hidden="true" />
-    <p class="post-title mb-4 mt-12">Comments</p>
-    <div id="tcomment"></div>
   </main>
+  <div id="comment">
+    <span class="text-xl">Leave a comment 💬</span>
+    <div id="tcomment"></div>
+  </div>
   <Footer />
 </Layout>
+
+<style>
+  #comment {
+    @apply mx-auto w-full max-w-3xl px-4 pb-12;
+  }
+</style>
 
 <script>
   import twikoo from "twikoo";
   twikoo({
-    envId: "https://hll-twikoo.up.railway.app",
+    envId: "https://comments.haobin.liang.london",
     el: "#tcomment",
     lang: "en-GB",
   }).then(() => {
     console.log("comment loading success");
   });
 </script>
-
-<style>
-  main {
-    @apply mx-auto w-full max-w-3xl px-4 pb-12;
-  }
-  .post-title {
-    @apply text-2xl font-semibold text-skin-accent;
-  }
-</style>

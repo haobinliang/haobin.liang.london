@@ -4,8 +4,6 @@ title: About
 updatedDatetime: 2023-03-25T00:51
 ---
 
-import Datetime from "../components/Datetime";
-
 ## This blog
 
 This blog adapted from [AstroPaper](https://github.com/satnaing/astro-paper) by [satnaing](https://github.com/satnaing).
@@ -16,7 +14,7 @@ This blog adapted from [AstroPaper](https://github.com/satnaing/astro-paper) by 
 
 ### Done
 
-- [x] [i18n for Chinese posts](/posts/chinese-first-post-zhcn)
+- [x] ~[i18n for Chinese posts](/posts/chinese-first-post-zhcn)~
 
 ## macOS setup
 
@@ -52,7 +50,7 @@ This blog adapted from [AstroPaper](https://github.com/satnaing/astro-paper) by 
 - Diablo 3 (Nintendo Switch)
 - 王者荣耀 (iPhone)
 - [The Witcher 3: Wild Hunt](https://www.thewitcher.com/us/en/witcher3) (Xbox)
-- ~World of Warcraft (furious about ungraceful exit of China)~
+- ~World of Warcraft (furious about the ungraceful exit of China)~
 
 ## Tools and frameworks I am following / 差生文具多
 
