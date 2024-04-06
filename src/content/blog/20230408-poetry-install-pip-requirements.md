@@ -1,6 +1,6 @@
 ---
 title: Poetry install Pip requirements.txt
-postSlug: poetry-install-pip-requirements
+slug: poetry-install-pip-requirements
 pubDatetime: 2023-04-08T13:34:09
 tags: ["python", "poetry", "pip"]
 description: Workaround to use Poetry install and manage Pip requirements.txt

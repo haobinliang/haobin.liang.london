@@ -1,53 +1,53 @@
-import Datetime from "./Datetime";
 import { slugifyStr } from "@utils/slugify";
+import Datetime from "./Datetime";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
   href?: string;
   frontmatter: CollectionEntry<"blog">["data"];
   secHeading?: boolean;
-  showDescription?: boolean;
 }
 
-export default function Card({
-  href,
-  frontmatter,
-  secHeading = true,
-  showDescription,
-}: Props) {
+export default function Card({ href, frontmatter, secHeading = true }: Props) {
   const {
     title,
     pubDatetime,
+    modDatetime,
     description,
-    locale,
-    postSlug,
-    tags,
     isTranslated,
+    tags,
+    locale,
   } = frontmatter;
 
   const headerProps = {
-    style: {
-      viewTransitionName: postSlug ? postSlug : slugifyStr(title),
-    },
-    className:
-      "text-lg font-medium decoration-dashed group-hover:underline text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0",
+    style: { viewTransitionName: slugifyStr(title) },
+    className: "text-lg font-medium decoration-dashed hover:underline",
   };
 
   return (
     <li className="my-6">
-      <a href={href} className="group flex items-center gap-2">
+      <a
+        href={href}
+        className="group inline-flex gap-3 text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+      >
         {secHeading ? (
           <h2 {...headerProps}>{title}</h2>
         ) : (
           <h3 {...headerProps}>{title}</h3>
         )}
         {tags.includes("snippet") && (
-          <span className="rounded-md border bg-skin-accent p-1 text-xs uppercase text-skin-inverted group-hover:border-dashed">
+          <span
+            className="content-center  rounded-md border border-skin-accent bg-skin-accent p-1 text-xs uppercase text-skin-inverted
+          group-hover:border group-hover:border-dashed group-hover:border-skin-line"
+          >
             {"</>"}
           </span>
         )}
         {locale === "zh-CN" && (
-          <span className="rounded-md border bg-skin-accent p-1 text-xs uppercase text-skin-inverted group-hover:border-dashed">
+          <span
+            className="content-center  rounded-md border border-skin-accent bg-skin-accent p-1 text-xs uppercase text-skin-inverted
+          group-hover:border group-hover:border-dashed group-hover:border-skin-line"
+          >
             中
           </span>
         )}
@@ -56,7 +56,8 @@ export default function Card({
         <div className="inline-flex gap-2 text-skin-accent">
           <span className="select-none">·</span>
           <a
-            className="rounded-md border p-1 text-xs uppercase hover:border-dashed"
+            className="content-center  rounded-md border border-skin-accent bg-skin-accent p-1 text-xs uppercase text-skin-inverted
+          group-hover:border group-hover:border-dashed group-hover:border-skin-line"
             href={
               locale === "en-GB" ? href + "-zhcn" : href.replace("-zhcn", "")
             }
@@ -65,8 +66,8 @@ export default function Card({
           </a>
         </div>
       )}
-      <Datetime datetime={pubDatetime} slug={`${postSlug}-time`} />
-      {showDescription ? <p>{description}</p> : ""}
+      <Datetime pubDatetime={pubDatetime} modDatetime={modDatetime} />
+      {/* <p>{description}</p> */}
     </li>
   );
 }

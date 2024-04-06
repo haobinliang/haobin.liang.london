@@ -3,8 +3,9 @@ title: Another commit - 2023
 pubDatetime: 2023-03-24T21:22:05
 tags: ["astro"]
 draft: false
-postSlug: another-commit-2023
+slug: another-commit-2023
 description: Rebooting my blog in 2023
+locale: "en-GB"
 ---
 
 A week ago, I received the domain renewal notification for liang.london (price = $39.16/£32.61 if you are interested). Only then I remembered that I had re-established my blog last year, thinking about writing more about life and work.

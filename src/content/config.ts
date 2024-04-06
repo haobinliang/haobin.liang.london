@@ -7,11 +7,8 @@ const blog = defineCollection({
     z.object({
       author: z.string().default(SITE.author),
       pubDatetime: z.date(),
-      updatedDatetime: z.date().optional(),
+      modDatetime: z.date().optional().nullable(),
       title: z.string(),
-      postSlug: z.string().optional(),
-      locale: z.string().default("en-GB").optional(),
-      isTranslated: z.boolean().default(false).optional(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),
@@ -23,6 +20,8 @@ const blog = defineCollection({
         .optional(),
       description: z.string(),
       canonicalURL: z.string().optional(),
+      locale: z.string().default("en-GB").optional(), // HL
+      isTranslated: z.boolean().default(false).optional(), // HL
     }),
 });
 

@@ -3,8 +3,9 @@ title: Initial commit - haobin.liang.london re-established 2022
 pubDatetime: 2022-05-01T10:30:09
 tags: ["nextjs"]
 draft: false
-postSlug: initial-commit-2022
+slug: initial-commit-2022
 description: Re-establishing my blog in 2022
+locale: "en-GB"
 ---
 
 Personal blog is something I drop and come back over and over again. The trigger is different each time; but the route to failure is the same:

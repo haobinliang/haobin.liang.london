@@ -1,6 +1,6 @@
 ---
 title: 中文首po
-postSlug: chinese-first-post-zhcn
+slug: chinese-first-post-zhcn
 pubDatetime: 2023-04-02T01:30:09
 tags: ["astro"]
 description: 折腾了大半天，终于折衷了做出了个中文的 workaround

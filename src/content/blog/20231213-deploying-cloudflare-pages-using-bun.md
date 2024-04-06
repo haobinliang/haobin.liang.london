@@ -3,7 +3,7 @@ title: Deploying to Cloudflare Pages using Bun
 pubDatetime: 2023-12-13T22:25:05
 tags: ["bun", "cloudflare", "cloudfare-pages"]
 description: Notes about deploying Cloudflare Pages using Bun
-postSlug: deploying-cloudflare-pages-using-bun
+slug: deploying-cloudflare-pages-using-bun
 ---
 
 ## Deploying to Cloudflare Pages using Bun

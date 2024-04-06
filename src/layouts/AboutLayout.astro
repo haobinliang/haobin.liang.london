@@ -4,13 +4,11 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import Layout from "./Layout.astro";
-import Datetime from "@components/Datetime";
 
 export interface Props {
   frontmatter: {
     title: string;
     description?: string;
-    updatedDatetime?: string | Date;
   };
 }
 
@@ -23,45 +21,8 @@ const { frontmatter } = Astro.props;
   <main id="main-content">
     <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">
       <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
-      {
-        frontmatter.updatedDatetime && (
-          <Datetime
-            datetime={frontmatter.updatedDatetime}
-            leadingText="Updated:"
-            className="text-skin-base"
-          />
-        )
-      }
       <slot />
     </section>
   </main>
-  <div id="comment">
-    <span class="text-xl">Leave a comment 💬</span>
-    <div id="tcomment"></div>
-  </div>
   <Footer />
 </Layout>
-
-<style>
-  #comment {
-    @apply mx-auto w-full max-w-3xl px-4 pb-12;
-  }
-</style>
-
-<!-- <script
-  crossorigin="anonymous"
-  async
-  is:inline
-  src="https://cdn.staticfile.org/twikoo/1.6.27/twikoo.all.min.js"></script> -->
-<script>
-  import twikoo from "twikoo";
-  document.addEventListener("astro:page-load", () => {
-    twikoo({
-      envId: "https://comments.haobin.liang.london",
-      el: "#tcomment",
-      lang: "en-GB",
-    }).then(() => {
-      console.log("comment loading success");
-    });
-  });
-</script>

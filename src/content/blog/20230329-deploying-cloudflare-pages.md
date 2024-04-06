@@ -3,12 +3,11 @@ title: Deploying Astro & AstroPaper to Cloudflare Pages using PNPM
 pubDatetime: 2023-03-29T23:22:05
 tags: ["astro", "cloudflare", "cloudfare-pages"]
 description: Notes about deploying Astro to Cloudflare Pages using PNPM and fixing AstroPaper background flashing when loading pages due to Rocket Loader
-postSlug: deploying-astro-astro-paper-cloudflare-pages-pnpm
+slug: deploying-astro-astro-paper-cloudflare-pages-pnpm
+locale: "en-GB"
 ---
 
-## Deploying to Cloudflare Pages using PNPM
-
-In my local machine, I use PNPM as the package management. However, Cloudflare doesn't support it out of the box ([here is the list](https://developers.cloudflare.com/pages/platform/build-configuration/#language-support-and-tools)).
+I use PNPM as the package management in my local machine. However, Cloudflare doesn't support it out of the box ([here is the list](https://developers.cloudflare.com/pages/platform/build-configuration/#language-support-and-tools)).
 
 Here's how I get around it.
 
