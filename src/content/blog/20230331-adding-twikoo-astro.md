@@ -14,6 +14,7 @@ Add below code to the page.
 
 ```js
 <script>
+// or `<script data-cfasync="false">` if you are on Cloudflare
   document.addEventListener("astro:page-load", () => {
     function loadTwikoo() {
       const commentsContainer = document.getElementById("tcomment");
