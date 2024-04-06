@@ -13,7 +13,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
     title,
     pubDatetime,
     modDatetime,
-    description,
+    // description,
     isTranslated,
     tags,
     locale,
