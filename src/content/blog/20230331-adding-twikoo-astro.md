@@ -1,7 +1,7 @@
 ---
 title: Adding Twikoo comment system to Astro
 pubDatetime: 2023-03-31T00:43:05
-modDatetime: 2024-04-06T01:30:09
+modDatetime: 2024-04-08T12:43:09
 tags: ["astro", "twikoo"]
 description: Couldn't find out-of-the-box solution anywhere so I think it might be good to just share what I did to add Twikoo to Astro
 slug: adding-twikoo-astro
@@ -10,9 +10,11 @@ locale: "en-GB"
 
 I am using CloudFlare's CDN service - [https://cdnjs.com/libraries/twikoo](https://cdnjs.com/libraries/twikoo). The `integrity` will change every version.
 
-Add below code to the page.
+Create `Comment.astro` under `src/components` with below:
 
 ```js
+<div id="tcomment"></div>
+
 <script>
 // or `<script data-cfasync="false">` if you are on Cloudflare
   document.addEventListener("astro:page-load", () => {
@@ -47,10 +49,15 @@ Add below code to the page.
 </script>
 ```
 
-Place the div to trigger the comment section.
+Place below in the page that you want to show the comment section.
 
-```html
-<div id="tcomment"></div>
+```astro
+---
+import Comment from "~/components/Comment.astro";
+---
+
+<!-- The comment section -->
+<Comment />
 ```
 
 _Source: [Astro 添加 Twikoo 评论](https://www.iamlm.com/blog/170.Astro%20%E6%B7%BB%E5%8A%A0%20Twikoo%20%E8%AF%84%E8%AE%BA/) by [老麦](https://www.iamlm.com/)_
