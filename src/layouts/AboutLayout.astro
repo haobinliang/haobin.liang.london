@@ -4,6 +4,7 @@ import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import Layout from "./Layout.astro";
+import Comment from "./Comment.astro";
 
 export interface Props {
   frontmatter: {
@@ -24,5 +25,12 @@ const { frontmatter } = Astro.props;
       <slot />
     </section>
   </main>
+  <Comment />
   <Footer />
 </Layout>
+
+<style>
+  #comment {
+    @apply mx-auto w-full max-w-3xl px-4 pb-12;
+  }
+</style>
