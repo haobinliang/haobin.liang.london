@@ -1,7 +1,6 @@
 <div id="comment">
   <span class="text-xl">Leave a comment 💬</span>
   <div id="tcomment"></div>
-
   <script is:inline data-cfasync="false">
     /** Create a progress indicator
      *  at the top */
@@ -112,7 +111,6 @@
     }
     backToTop();
   </script>
-
   <script data-cfasync="false">
     document.addEventListener("astro:page-load", () => {
       function loadTwikoo() {
@@ -120,10 +118,10 @@
         if (commentsContainer) {
           const script = document.createElement("script");
           script.src =
-            "https://cdnjs.cloudflare.com/ajax/libs/twikoo/1.6.32/twikoo.all.min.js";
+            "https://cdnjs.cloudflare.com/ajax/libs/twikoo/1.6.39/twikoo.all.min.js";
           script.defer = true;
           script.integrity =
-            "sha512-oLwAGOCSlT4rWN1IV2lpvUWOwYPo1xhJyrIhFk6jVa+S7Vi2AKvr0rEuvHZAkVd9p3sJBTMcx2XabwK0HGxFuA==";
+            "sha512-U1Og3lLG7ogYjf6sIkuBcLVjy9UNTPGmHsK6CTX2fQUsCh/As6GbDPOEp6v87C1W4Ewl7OnRmbZZWp1dSl/wGg==";
           script.crossOrigin = "anonymous";
           script.referrerPolicy = "no-referrer";
 
@@ -144,10 +142,10 @@
       loadTwikoo();
     });
   </script>
-
-  <style>
-    #comment {
-      @apply mx-auto w-full max-w-3xl pb-12;
-    }
-  </style>
 </div>
+
+<style>
+  #comment {
+    @apply mx-auto w-full max-w-3xl pb-12;
+  }
+</style>
