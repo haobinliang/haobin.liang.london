@@ -5,11 +5,15 @@ import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import Layout from "./Layout.astro";
 import Comment from "./Comment.astro";
+import Datetime from "@components/Datetime";
 
 export interface Props {
   frontmatter: {
     title: string;
     description?: string;
+    modDatetime?: Date;
+    pubDatetime: Date;
+    postId?: string;
   };
 }
 
@@ -22,6 +26,13 @@ const { frontmatter } = Astro.props;
   <main id="main-content">
     <section id="about" class="prose mb-28 max-w-3xl prose-img:border-0">
       <h1 class="text-2xl tracking-wider sm:text-3xl">{frontmatter.title}</h1>
+      <Datetime
+        pubDatetime={frontmatter.pubDatetime}
+        modDatetime={frontmatter.modDatetime}
+        size="lg"
+        className="my-2"
+        postId={frontmatter.postId}
+      />
       <slot />
     </section>
   </main>
