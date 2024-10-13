@@ -13,6 +13,12 @@ git remote add ap https://github.com/satnaing/astro-paper
 git merge ap/main --allow-unrelated-histories
 ```
 
+## Fetch updates if the remote repository already exists
+
+```shell
+git fetch ap main
+```
+
 ## Resolve conflicts manually
 
 I use VS Code so it's a painful process to look at code line by line.
