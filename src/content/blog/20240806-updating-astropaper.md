@@ -1,9 +1,11 @@
 ---
 title: Updating AstroPaper
 pubDatetime: 2024-08-06T23:48:15
-tags: ["astropaper"]
+tags:
+    - astropaper
 description: Notes about updating AstroPaper theme from existing commit
 slug: updating-astropaper
+modDatetime: 2024-10-13T14:07:25.532Z
 ---
 
 ## Add AstroPaper as a remote repository
