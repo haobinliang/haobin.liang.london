@@ -24,6 +24,14 @@ const blog = defineCollection({
       canonicalURL: z.string().optional(),
       locale: z.string().default("en-GB").optional(), // HL
       isTranslated: z.boolean().default(false).optional(), // HL
+      editPost: z
+        .object({
+          disabled: z.boolean().optional(),
+          url: z.string().optional(),
+          text: z.string().optional(),
+          appendFilePath: z.boolean().optional(),
+        })
+        .optional(),
     }),
 });
 
